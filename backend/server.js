@@ -16,8 +16,11 @@ mongoose
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log('MongoDB connection error:', err));
 
-const chatRoute = require('./routes/chat');
-app.use('/chat', chatRoute);
+const chatRoute = require('./routes/chat_openai');
+app.use('/api', chatRoute);
+
+const chatRouteHugging = require('./routes/chat_hugging');
+app.use('/api', chatRouteHugging);
 
 app.get('/', (req, res) => {
     res.send('Server is running');
