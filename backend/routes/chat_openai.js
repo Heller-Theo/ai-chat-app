@@ -6,11 +6,11 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-router.post('/chatopenai', async (req, res) => {
+router.post('/chat_openai', async (req, res) => {
     const { message } = req.body;
     try {
         const response = await openai.completions.create({
-            model: 'text-davinci-003',
+            model: 'gpt-3.5-turbo',
             messages: [{ role: "user", content: message }],
             max_tokens: 150,
         });

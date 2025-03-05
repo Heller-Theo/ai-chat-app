@@ -10,7 +10,7 @@ const Chat = () => {
             setChat([...chat, { user: 'You', text: message }]);
             setMessage('');
             try {
-                const response = await axios.post('http://localhost:5000/api/chat', { message });
+                const response = await axios.post('http://localhost:5000/api/chat_hugging', { message });
                 setChat([...chat, { user: 'You', text: message }, {user: 'AI', text: response.data.reply}]);
             } catch (error) {
                 console.error('Error:', error);

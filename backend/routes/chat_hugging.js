@@ -8,7 +8,7 @@ const HUGGING_FACE_API_URL = 'https://api-inference.huggingface.co/models/gpt2';
 const API_KEY = process.env.HUGGING_FACE_API_KEY;
 
 // Post request to chat route
-router.post('/chat', async (req, res) => {
+router.post('/chat_hugging', async (req, res) => {
     const { message } = req.body;
     try {
         const response = await axios.post(
